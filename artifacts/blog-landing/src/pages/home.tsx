@@ -9,18 +9,18 @@ import {
   SiTelegram,
 } from "react-icons/si";
 
-import onlineEarningImage from "@assets/generated_images/passive_income.jpg";
+import watchEarnImage from "@assets/generated_images/watch_earn_money.jpg";
 
 const FEATURED_ARTICLE = {
   id: 1,
-  title: "Online Earning in 2026: Real Ways to Make Money on the Internet",
+  title: "Earn Money by Watching Videos: Complete Guide for Beginners in 2026",
   excerpt:
-    "The internet has opened up countless legitimate ways to earn money from home. Whether you are a student, a housewife, or someone looking for extra income, here are proven methods that actually work.",
-  category: "Business",
+    "Did you know you can get paid just for watching videos online? From YouTube tasks to paid platforms, this complete guide explains exactly how it works, which platforms are legitimate, and how much you can realistically earn.",
+  category: "Online Earning",
   author: "Admin",
   date: "August 5, 2026",
-  comments: 18,
-  image: onlineEarningImage,
+  comments: 24,
+  image: watchEarnImage,
   slug: "/article",
 };
 

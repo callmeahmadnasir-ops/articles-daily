@@ -1,86 +1,44 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Search, MessageCircle } from "lucide-react";
-import { 
-  SiFacebook, 
-  SiX, 
-  SiInstagram, 
-  SiYoutube, 
-  SiTelegram 
+import {
+  SiFacebook,
+  SiX,
+  SiInstagram,
+  SiYoutube,
+  SiTelegram,
 } from "react-icons/si";
 
-import cryptoImage from "@assets/generated_images/crypto_finance.jpg";
-import productivityImage from "@assets/generated_images/productivity_hacks.jpg";
-import pakistanImage from "@assets/generated_images/pakistan_tech.jpg";
-import passiveIncomeImage from "@assets/generated_images/passive_income.jpg";
+import onlineEarningImage from "@assets/generated_images/passive_income.jpg";
 
-// Mock Data
 const FEATURED_ARTICLE = {
   id: 1,
-  title: "The Future of Cryptocurrency in 2026: How AI is Reshaping Digital Finance",
-  excerpt: "As artificial intelligence deepens its integration into blockchain technology, the landscape of decentralized finance is undergoing a monumental shift. Discover the trends defining the next era of wealth.",
-  category: "Finance",
+  title: "Online Earning in 2026: Real Ways to Make Money on the Internet",
+  excerpt:
+    "The internet has opened up countless legitimate ways to earn money from home. Whether you are a student, a housewife, or someone looking for extra income, here are proven methods that actually work.",
+  category: "Business",
   author: "Admin",
-  date: "June 17, 2026",
-  comments: 12,
-  image: cryptoImage
+  date: "August 5, 2026",
+  comments: 18,
+  image: onlineEarningImage,
+  slug: "/article",
 };
 
-const ARTICLES = [
-  {
-    id: 2,
-    title: "10 Productivity Hacks Every Remote Worker Should Know in 2026",
-    excerpt: "With remote work now the enduring standard, optimizing your environment and workflow is critical. These tested strategies will supercharge your daily output.",
-    category: "Tech",
-    author: "Admin",
-    date: "June 10, 2026",
-    comments: 8,
-    image: productivityImage
-  },
-  {
-    id: 3,
-    title: "Pakistan's Tech Startup Scene: Why the World is Watching",
-    excerpt: "A booming young population and increased foreign venture capital have turned local startups into global contenders. Here's what's driving the unprecedented growth.",
-    category: "Startups",
-    author: "Admin",
-    date: "June 5, 2026",
-    comments: 24,
-    image: pakistanImage
-  },
-  {
-    id: 4,
-    title: "How to Build Passive Income Online: A Beginner's Guide",
-    excerpt: "From digital products to automated drop-servicing, creating self-sustaining revenue streams is more accessible than ever. Start building your portfolio today.",
-    category: "Business",
-    author: "Admin",
-    date: "May 28, 2026",
-    comments: 5,
-    image: passiveIncomeImage
-  }
-];
-
-// Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
+    transition: { staggerChildren: 0.15 },
+  },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
+  show: {
+    opacity: 1,
     y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15
-    }
-  }
+    transition: { type: "spring", stiffness: 100, damping: 15 },
+  },
 };
 
 export default function Home() {
@@ -97,7 +55,7 @@ export default function Home() {
             <Link href="#" className="hover:text-primary transition-colors"><SiYoutube className="w-5 h-5" /></Link>
             <Link href="#" className="hover:text-primary transition-colors"><SiTelegram className="w-5 h-5" /></Link>
           </div>
-          
+
           {/* Logo - Center */}
           <div className="flex-1 text-center">
             <Link href="/" className="inline-block">
@@ -121,31 +79,28 @@ export default function Home() {
             <Link href="/" className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full transition-transform hover:scale-105 shadow-sm">
               Home
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Tech</Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Finance</Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Startups</Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">Lifestyle</Link>
           </nav>
         </div>
       </header>
 
       {/* MAIN CONTENT */}
-      <main className="flex-1 container mx-auto px-4 md:px-8 py-10">
-        <motion.div 
+      <main className="flex-1 container mx-auto px-4 md:px-8 py-10 max-w-5xl">
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="show"
           className="space-y-12"
         >
-          {/* Featured Article */}
-          <motion.article 
+          {/* Featured Article — full clickable card */}
+          <motion.article
             variants={itemVariants}
             className="group grid grid-cols-1 lg:grid-cols-2 gap-8 bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border"
           >
-            <Link href="#" className="block aspect-[16/10] lg:aspect-auto relative overflow-hidden">
+            {/* Image */}
+            <Link href={FEATURED_ARTICLE.slug} className="block aspect-[16/10] lg:aspect-auto relative overflow-hidden">
               <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10" />
-              <img 
-                src={FEATURED_ARTICLE.image} 
+              <img
+                src={FEATURED_ARTICLE.image}
                 alt={FEATURED_ARTICLE.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
@@ -155,17 +110,19 @@ export default function Home() {
                 </span>
               </div>
             </Link>
+
+            {/* Text */}
             <div className="p-6 lg:p-10 flex flex-col justify-center">
-              <Link href="#">
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 group-hover:text-primary transition-colors text-balance">
+              <Link href={FEATURED_ARTICLE.slug}>
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 group-hover:text-primary transition-colors text-balance cursor-pointer">
                   {FEATURED_ARTICLE.title}
                 </h2>
               </Link>
               <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
                 {FEATURED_ARTICLE.excerpt}
               </p>
-              
-              <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
+
+              <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-foreground font-bold">
                     A
@@ -180,50 +137,15 @@ export default function Home() {
                   {FEATURED_ARTICLE.comments}
                 </span>
               </div>
+
+              <Link
+                href={FEATURED_ARTICLE.slug}
+                className="self-start bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                Read Article
+              </Link>
             </div>
           </motion.article>
-
-          {/* Grid Articles */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ARTICLES.map((article) => (
-              <motion.article 
-                key={article.id}
-                variants={itemVariants}
-                className="group flex flex-col bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border hover:-translate-y-1"
-              >
-                <Link href="#" className="block aspect-[16/10] relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10" />
-                  <img 
-                    src={article.image} 
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute top-4 left-4 z-20">
-                    <span className="bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
-                      {article.category}
-                    </span>
-                  </div>
-                </Link>
-                
-                <div className="p-6 flex flex-col flex-1">
-                  <Link href="#">
-                    <h3 className="text-xl font-bold leading-snug mb-3 group-hover:text-primary transition-colors line-clamp-3">
-                      {article.title}
-                    </h3>
-                  </Link>
-                  <p className="text-muted-foreground text-sm mb-6 line-clamp-2 flex-1">
-                    {article.excerpt}
-                  </p>
-                  
-                  <div className="flex items-center gap-3 text-xs font-medium text-muted-foreground mt-auto pt-4 border-t border-border">
-                    <span className="text-foreground">{article.author}</span>
-                    <span>•</span>
-                    <span>{article.date}</span>
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
         </motion.div>
       </main>
 
@@ -239,7 +161,6 @@ export default function Home() {
                 The premier digital magazine for modern insights.
               </p>
             </div>
-            
             <div className="flex items-center gap-6">
               <Link href="#" className="text-neutral-400 hover:text-white transition-colors"><SiFacebook className="w-5 h-5" /></Link>
               <Link href="#" className="text-neutral-400 hover:text-white transition-colors"><SiX className="w-4 h-4" /></Link>
@@ -248,7 +169,6 @@ export default function Home() {
               <Link href="#" className="text-neutral-400 hover:text-white transition-colors"><SiTelegram className="w-5 h-5" /></Link>
             </div>
           </div>
-          
           <div className="mt-12 pt-8 border-t border-neutral-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-500">
             <p>&copy; 2026 Articles Daily. All rights reserved.</p>
             <div className="flex gap-4">

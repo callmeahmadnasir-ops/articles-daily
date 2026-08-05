@@ -97,12 +97,12 @@ export default function Home() {
             className="group grid grid-cols-1 lg:grid-cols-2 gap-8 bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border"
           >
             {/* Image */}
-            <Link href={FEATURED_ARTICLE.slug} className="block aspect-[16/10] lg:aspect-auto relative overflow-hidden">
+            <Link href={FEATURED_ARTICLE.slug} className="block aspect-[16/10] lg:aspect-auto lg:min-h-[320px] relative overflow-hidden">
               <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10" />
               <img
                 src={FEATURED_ARTICLE.image}
                 alt={FEATURED_ARTICLE.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute top-4 left-4 z-20">
                 <span className="bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded">

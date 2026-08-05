@@ -128,6 +128,18 @@ export default function ArticlePage() {
               <strong>Viggle</strong> — An entertainment rewards app that pays you for watching live TV and on-demand content. Simply check in while you watch and earn points redeemable for real rewards.
             </p>
 
+            {/* Join Now Button 1 */}
+            <div className="my-6 flex justify-center">
+              <a
+                href="#"
+                className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:from-green-600 hover:to-green-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <span className="text-2xl">▶</span>
+                Join Now — Start Earning Today
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Free</span>
+              </a>
+            </div>
+
             <h2 className="text-2xl font-bold text-[#111] pt-4">Earn More: Creating a YouTube Channel</h2>
 
             <p>
@@ -162,6 +174,21 @@ export default function ArticlePage() {
               Earning money by watching videos is a genuine way to generate supplementary income during your free time. While it will not replace a full-time income on its own, combining multiple platforms with a growing YouTube channel can build a meaningful and sustainable revenue stream over time. Start small, stay consistent, and always prioritize platforms with a proven track record.
             </p>
 
+          </div>
+
+          {/* Join Now Button 2 */}
+          <div className="mt-8 mb-2">
+            <div className="border-2 border-blue-600 rounded-2xl p-6 text-center bg-blue-50">
+              <p className="text-[#111] font-bold text-xl mb-1">Ready to Start Earning?</p>
+              <p className="text-gray-500 text-sm mb-5">Join thousands of people already making money by watching videos online.</p>
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 bg-blue-600 text-white font-bold text-base px-10 py-3.5 rounded-full shadow hover:bg-blue-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+              >
+                Join Now — It's Free
+                <span className="text-lg">→</span>
+              </a>
+            </div>
           </div>
 
           {/* Back Button */}

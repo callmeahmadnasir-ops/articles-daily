@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Blog Landing Page"
+description = "A clean blogging landing page where bloggers can showcase their articles. Features a bold site header, navigation, blog post cards with featured images, categories, author info, and a footer — inspired by sohailtoor.com layout."
+version = "1.0.0"
+id = "artifacts/blog-landing"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25810
+
+[services.development]
+run = "pnpm --filter @workspace/blog-landing run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/blog-landing", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/blog-landing/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25810"
+BASE_PATH = "/"

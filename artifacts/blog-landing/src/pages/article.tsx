@@ -87,6 +87,24 @@ export default function ArticlePage() {
             />
           </div>
 
+          {/* Join Now Buttons — side by side at the top */}
+          <div className="flex gap-4 justify-center mb-8">
+            <a
+              href="#"
+              style={{background:"#2b2b2b"}}
+              className="inline-flex items-center justify-center text-white font-bold text-base px-10 py-4 rounded-full hover:opacity-80 transition-opacity"
+            >
+              JOIN NOW
+            </a>
+            <a
+              href="#"
+              style={{background:"#2b2b2b"}}
+              className="inline-flex items-center justify-center text-white font-bold text-base px-10 py-4 rounded-full hover:opacity-80 transition-opacity"
+            >
+              JOIN NOW
+            </a>
+          </div>
+
           {/* Article Body */}
           <div className="text-[#222] leading-relaxed text-[17px] space-y-5">
 
@@ -128,17 +146,6 @@ export default function ArticlePage() {
               <strong>Viggle</strong> — An entertainment rewards app that pays you for watching live TV and on-demand content. Simply check in while you watch and earn points redeemable for real rewards.
             </p>
 
-            {/* Join Now Button 1 */}
-            <div className="my-6 flex justify-center">
-              <a
-                href="#"
-                style={{background:"#2b2b2b"}}
-                className="inline-flex items-center justify-center text-white font-bold text-base px-12 py-4 rounded-full hover:opacity-80 transition-opacity"
-              >
-                JOIN NOW
-              </a>
-            </div>
-
             <h2 className="text-2xl font-bold text-[#111] pt-4">Earn More: Creating a YouTube Channel</h2>
 
             <p>
@@ -173,17 +180,6 @@ export default function ArticlePage() {
               Earning money by watching videos is a genuine way to generate supplementary income during your free time. While it will not replace a full-time income on its own, combining multiple platforms with a growing YouTube channel can build a meaningful and sustainable revenue stream over time. Start small, stay consistent, and always prioritize platforms with a proven track record.
             </p>
 
-          </div>
-
-          {/* Join Now Button 2 */}
-          <div className="mt-6 mb-2 flex justify-center">
-            <a
-              href="#"
-              style={{background:"#2b2b2b"}}
-              className="inline-flex items-center justify-center text-white font-bold text-base px-12 py-4 rounded-full hover:opacity-80 transition-opacity"
-            >
-              JOIN NOW
-            </a>
           </div>
 
           {/* Back Button */}

@@ -91,13 +91,13 @@ export default function Home() {
           animate="show"
           className="space-y-12"
         >
-          {/* Featured Article — full clickable card */}
+          {/* Featured Article — stacked: full-width image on top, text below */}
           <motion.article
             variants={itemVariants}
-            className="group grid grid-cols-1 lg:grid-cols-2 gap-8 bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border"
+            className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border"
           >
-            {/* Image */}
-            <Link href={FEATURED_ARTICLE.slug} className="block relative overflow-hidden min-h-[260px] lg:min-h-full">
+            {/* Full-width Image */}
+            <Link href={FEATURED_ARTICLE.slug} className="block relative overflow-hidden aspect-[16/9]">
               <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10" />
               <img
                 src={FEATURED_ARTICLE.image}
@@ -111,18 +111,18 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Text */}
-            <div className="p-6 lg:p-10 flex flex-col justify-center">
+            {/* Text below image */}
+            <div className="p-6 lg:p-8">
               <Link href={FEATURED_ARTICLE.slug}>
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 group-hover:text-primary transition-colors text-balance cursor-pointer">
+                <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors cursor-pointer">
                   {FEATURED_ARTICLE.title}
                 </h2>
               </Link>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-base mb-5 leading-relaxed">
                 {FEATURED_ARTICLE.excerpt}
               </p>
 
-              <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground mb-6">
+              <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-muted-foreground mb-5">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-foreground font-bold">
                     A
@@ -140,7 +140,7 @@ export default function Home() {
 
               <Link
                 href={FEATURED_ARTICLE.slug}
-                className="self-start bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+                className="inline-block bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 Read Article
               </Link>

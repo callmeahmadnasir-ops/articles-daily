@@ -11,14 +11,6 @@ import {
 
 import articleImage from "@assets/32cf39ff-ecbd-42a9-b4ea-c1f0f767e228-1024x683-1_1785945626339.png";
 
-// Monetag popunder — triggered on Join Now clicks
-function triggerPopunder() {
-  const s = document.createElement("script");
-  s.dataset.zone = "11510302";
-  s.src = "https://al5sm.com/tag.min.js";
-  (document.body || document.documentElement).appendChild(s);
-}
-
 export default function ArticlePage() {
   return (
     <div className="min-h-[100dvh] flex flex-col bg-white text-[#111]">
@@ -95,21 +87,12 @@ export default function ArticlePage() {
             />
           </div>
 
-          {/* Join Now Buttons — side by side at the top */}
-          <div className="flex gap-4 justify-center mb-8">
+          {/* Join Now Button — Monetag popunder fires on click via global script */}
+          <div className="flex justify-center mb-8">
             <a
               href="#"
-              onClick={triggerPopunder}
               style={{background:"#2b2b2b"}}
-              className="inline-flex items-center justify-center text-white font-bold text-base px-10 py-4 rounded-full hover:opacity-80 transition-opacity"
-            >
-              JOIN NOW
-            </a>
-            <a
-              href="#"
-              onClick={triggerPopunder}
-              style={{background:"#2b2b2b"}}
-              className="inline-flex items-center justify-center text-white font-bold text-base px-10 py-4 rounded-full hover:opacity-80 transition-opacity"
+              className="inline-flex items-center justify-center text-white font-bold text-base px-12 py-4 rounded-full hover:opacity-80 transition-opacity"
             >
               JOIN NOW
             </a>

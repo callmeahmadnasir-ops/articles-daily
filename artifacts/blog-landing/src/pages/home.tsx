@@ -9,7 +9,7 @@ import {
   SiTelegram,
 } from "react-icons/si";
 
-import watchEarnImage from "@assets/generated_images/watch_earn_money.jpg";
+import watchEarnImage from "@assets/generated_images/watch_earn_landscape.jpg";
 
 const FEATURED_ARTICLE = {
   id: 1,

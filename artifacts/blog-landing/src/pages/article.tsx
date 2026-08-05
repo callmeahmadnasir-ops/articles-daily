@@ -162,9 +162,6 @@ export default function ArticlePage() {
               Earning money by watching videos is a genuine way to generate supplementary income during your free time. While it will not replace a full-time income on its own, combining multiple platforms with a growing YouTube channel can build a meaningful and sustainable revenue stream over time. Start small, stay consistent, and always prioritize platforms with a proven track record.
             </p>
 
-            <p className="text-sm text-gray-400 border-t border-gray-200 pt-5 mt-6">
-              <strong>Disclaimer:</strong> This article is for informational and educational purposes only. Earnings mentioned are estimates and may vary depending on your location, effort, and platform policies. Always conduct your own research before joining any online earning platform.
-            </p>
           </div>
 
           {/* Back Button */}

@@ -10,6 +10,20 @@ import {
 } from "react-icons/si";
 
 import watchEarnImage from "@assets/32cf39ff-ecbd-42a9-b4ea-c1f0f767e228-1024x683-1_1785945626339.png";
+import ytSubsImage from "@assets/image_search_1787834502757_1787834520249.jpg";
+
+const SECOND_ARTICLE = {
+  id: 2,
+  title: "How to Get Free YouTube Subscribers in 2026: Best Websites and Proven Methods",
+  excerpt:
+    "Struggling to reach 1,000 subscribers? Discover the best free websites and organic methods that genuinely help you grow your YouTube channel — no money needed.",
+  category: "YouTube Growth",
+  author: "Admin",
+  date: "August 27, 2026",
+  comments: 18,
+  image: ytSubsImage,
+  slug: "/article-youtube-subscribers",
+};
 
 const FEATURED_ARTICLE = {
   id: 1,
@@ -91,7 +105,61 @@ export default function Home() {
           animate="show"
           className="space-y-12"
         >
-          {/* Featured Article — stacked: full-width image on top, text below */}
+          {/* Newest article first — Free YouTube Subscribers (top) */}
+          <motion.article
+            variants={itemVariants}
+            className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border"
+          >
+            <Link href={SECOND_ARTICLE.slug} className="block relative overflow-hidden aspect-[16/9]">
+              <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10" />
+              <img
+                src={SECOND_ARTICLE.image}
+                alt={SECOND_ARTICLE.title}
+                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute top-4 left-4 z-20">
+                <span className="bg-red-600 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded">
+                  {SECOND_ARTICLE.category}
+                </span>
+              </div>
+            </Link>
+
+            <div className="p-6 lg:p-8">
+              <Link href={SECOND_ARTICLE.slug}>
+                <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors cursor-pointer">
+                  {SECOND_ARTICLE.title}
+                </h2>
+              </Link>
+              <p className="text-muted-foreground text-base mb-5 leading-relaxed">
+                {SECOND_ARTICLE.excerpt}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-muted-foreground mb-5">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-foreground font-bold">
+                    A
+                  </div>
+                  <span className="text-foreground">{SECOND_ARTICLE.author}</span>
+                </div>
+                <span>•</span>
+                <span>{SECOND_ARTICLE.date}</span>
+                <span>•</span>
+                <span className="flex items-center gap-1">
+                  <MessageCircle className="w-4 h-4" />
+                  {SECOND_ARTICLE.comments}
+                </span>
+              </div>
+
+              <Link
+                href={SECOND_ARTICLE.slug}
+                className="inline-block bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                Read Article
+              </Link>
+            </div>
+          </motion.article>
+
+          {/* Older article — Earn Money by Watching Videos (below) */}
           <motion.article
             variants={itemVariants}
             className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border"

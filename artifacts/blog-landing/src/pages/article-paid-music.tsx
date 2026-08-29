@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, Calendar, MessageCircle } from "lucide-react";
@@ -8,19 +7,6 @@ import musicImage from "../assets/music-curator.svg";
 const JOIN_URL = "https://soundcamps.com/get-paid-to-listen-to-music/";
 
 export default function ArticlePaidMusicPage() {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://quge5.com/88/tag.min.js";
-    script.dataset.zone = "274387";
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    document.body.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, []);
-
   return (
     <div className="min-h-[100dvh] flex flex-col bg-white text-[#111]">
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">

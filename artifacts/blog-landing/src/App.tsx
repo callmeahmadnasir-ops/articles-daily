@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useEffect } from 'react';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
@@ -23,6 +24,17 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    const vignette = document.createElement('script');
+    vignette.dataset.zone = '11682010';
+    vignette.src = 'https://n6wxm.com/vignette.min.js';
+    document.body.appendChild(vignette);
+
+    return () => {
+      vignette.remove();
+    };
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

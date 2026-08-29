@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { Link } from "wouter";
 import { Search, MessageCircle } from "lucide-react";
 import {
@@ -11,6 +11,20 @@ import {
 
 import watchEarnImage from "@assets/32cf39ff-ecbd-42a9-b4ea-c1f0f767e228-1024x683-1_1785945626339.png";
 import ytSubsImage from "@assets/image_search_1787834502757_1787834520249.jpg";
+import musicImage from "../assets/music-curator.svg";
+
+const NEWEST_ARTICLE = {
+  id: 3,
+  title: "Get Paid to Listen to Music in 2026: A Complete Guide for Playlist Curators",
+  excerpt:
+    "Own a Spotify playlist with a real audience? Learn how playlist curators can review new songs, support independent artists, and earn extra money.",
+  category: "Online Earning",
+  author: "Admin",
+  date: "August 29, 2026",
+  comments: 12,
+  image: musicImage,
+  slug: "/get-paid-to-listen-to-music",
+};
 
 const SECOND_ARTICLE = {
   id: 2,
@@ -38,7 +52,7 @@ const FEATURED_ARTICLE = {
   slug: "/article",
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -46,7 +60,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
@@ -105,6 +119,43 @@ export default function Home() {
           animate="show"
           className="space-y-12"
         >
+          <motion.article
+            variants={itemVariants}
+            className="group bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-card-border"
+          >
+            <Link href={NEWEST_ARTICLE.slug} className="block relative overflow-hidden aspect-[16/9]">
+              <img
+                src={NEWEST_ARTICLE.image}
+                alt={NEWEST_ARTICLE.title}
+                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute top-4 left-4 z-20">
+                <span className="bg-purple-700 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded">
+                  {NEWEST_ARTICLE.category}
+                </span>
+              </div>
+            </Link>
+            <div className="p-6 lg:p-8">
+              <Link href={NEWEST_ARTICLE.slug}>
+                <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors cursor-pointer">
+                  {NEWEST_ARTICLE.title}
+                </h2>
+              </Link>
+              <p className="text-muted-foreground text-base mb-5 leading-relaxed">{NEWEST_ARTICLE.excerpt}</p>
+              <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-muted-foreground mb-5">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-foreground font-bold">A</div>
+                  <span className="text-foreground">{NEWEST_ARTICLE.author}</span>
+                </div>
+                <span>•</span><span>{NEWEST_ARTICLE.date}</span><span>•</span>
+                <span className="flex items-center gap-1"><MessageCircle className="w-4 h-4" />{NEWEST_ARTICLE.comments}</span>
+              </div>
+              <Link href={NEWEST_ARTICLE.slug} className="inline-block bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-90">
+                Read Article
+              </Link>
+            </div>
+          </motion.article>
+
           {/* Newest article first — Free YouTube Subscribers (top) */}
           <motion.article
             variants={itemVariants}
